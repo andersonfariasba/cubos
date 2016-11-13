@@ -1,0 +1,67 @@
+<ion-view view-title="Cubos - APP">
+	<ion-pane class="tela-custom">
+
+		<ion-tabs class="tabs-striped tabs-color-positive">
+			<ion-tab icon-on="ion-ios-film" icon-off="ion-ios-film-outline">
+				<ion-view title="Filmes">
+
+					<!-- Tab 2 - Lista dos filmes -->
+					<ion-content>
+
+						<ion-list>
+							<label class="item item-input">
+							<i class="icon ion-search placeholder-icon"></i>
+							<input type="text" name="title" id="title" placeholder="Pesquisar Filme" ng-model="title">
+
+							</label>
+						</ion-list>
+
+						<ion-list>
+
+							<a ng-click="mostrarAvaliacao(item);" class="item item-icon-left" collection-repeat="item in movies | orderBy:'title' | filter:title track by item.title">
+							<i class="icon ion-ios-arrow-right"></i>
+							<h2>{{item.title}}</h2>
+							<p>{{item.genres}}</p>
+
+							<span class="item-note"></span>
+							</a>
+						</ion-list>
+
+					</ion-content>
+				</ion-view>
+			</ion-tab>
+
+			<ion-tab title="Home" icon-on="ion-ios-people" icon-off="ion-ios-people-outline">
+
+				<ion-view title="Usuários">
+
+					<!-- Tab 1 - Lista dos Usuários -->
+					<ion-content>
+
+						<ion-list>
+							<label class="item item-input">
+							<i class="icon ion-search placeholder-icon"></i>
+							<input type="text" name="name" id="name" placeholder="Pesquisar Usuário" ng-model="name">
+
+							</label>
+						</ion-list>
+
+						<ion-list>
+
+							<ion-item  collection-repeat="item in users | orderBy:'name' | filter:name track by item.name" class="item item-icon-left">
+								<i class="icon ion-ios-arrow-right"></i>
+								<h2>{{item.name}}</h2>
+								<p>{{item.email}}</p>
+								<span class="item-note"></span>
+							</ion-item>
+
+						</ion-list>
+
+					</ion-content>
+				</ion-view>
+			</ion-tab>
+			
+		</ion-tabs>
+
+	</ion-pane>
+</ion-view>

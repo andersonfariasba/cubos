@@ -1,0 +1,22 @@
+<div class="bar bar-header bar-positive">
+  <h5 class="titulo">Avaliação</h5>
+</div>
+
+<div class="list card">
+
+  <div class="item">
+ 
+    <h2>{{item.title}}</h2>
+    <p>{{item.genres}}</p>
+  </div>
+
+  <div class="item item-miolo">
+   <rating ng-model="rating.rate" max="rating.max" ng-readonly="1"></rating>
+  </div>
+
+  <div class="item item-icon-left balanced">
+     <span class="txtAvaliacao">Qtd Avaliação: {{qtd_score}}</span>    
+  </div>
+
+ </div>
+
